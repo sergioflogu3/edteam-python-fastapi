@@ -1,0 +1,23 @@
+name: EDTEAM FastAPI demo
+
+on:
+  push:
+    branches:
+      - main
+      - development
+      
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+
+      - name: install dependencies
+        run: 
+          pip install -r requirements.txt
+
+      - name: unitests
+        run: 
+          pytest test/test.py
+          
