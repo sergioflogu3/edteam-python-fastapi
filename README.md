@@ -4,7 +4,7 @@ This DEMO API will be used to showcase fastAPI, CICD and more.
 
 ## Requirements
 
-python >= 3.9
+python >= 3.10
 
 ## Instruction
 

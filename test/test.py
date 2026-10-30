@@ -1,7 +1,6 @@
-from starlette.testclient import TestClient
+from fastapi.testclient import TestClient
 from app.db import database
 from app.main import app
-import json
 
 client = TestClient(app)
 
@@ -19,8 +18,7 @@ def test_get_store():
 
 def test_add_store():
     body = {"name":"My Test Store", "address": "My test address"}
-    body = json.dumps(body)
-    response = client.post('/stores', data=body)
+    response = client.post('/stores', json=body)
     assert response.status_code == 201
 
 def test_delete_store():
